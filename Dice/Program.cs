@@ -34,6 +34,8 @@ namespace Dice
             //}
 
             yatzyDice.Roll();
+
+            Console.WriteLine(yatzyDice.GetDiceValuesAsString());
         }
 
         //public static void DoSomeMagic(YatzyDice yatzyDice)

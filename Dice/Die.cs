@@ -6,7 +6,8 @@ namespace Dice
     {
         private static readonly Random Random = new Random();
 
-        private int _value;
+        public int Value { get; private set; }
+
         private bool _isLocked;
 
         //static Die()
@@ -16,13 +17,13 @@ namespace Dice
 
         public Die()
         {
-            _value = 6;
+            Value = 6;
             _isLocked = false;
         }
 
         public void Roll(bool forcedThrowAndReset = false)
         {
-            if (forcedThrowAndReset || !_isLocked) _value = Random.Next(1, 7);
+            if (forcedThrowAndReset || !_isLocked) Value = Random.Next(1, 7);
             if (forcedThrowAndReset)
             {
                 _isLocked = false;

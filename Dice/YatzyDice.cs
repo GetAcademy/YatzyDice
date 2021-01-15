@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 namespace Dice
 {
@@ -42,6 +43,18 @@ namespace Dice
                 die.Roll(isLastThrow);
             }
             _throwCount++;
+        }
+
+        public string GetDiceValuesAsString()
+        {
+            var stringBuilder = new StringBuilder();
+            foreach (var die in _dice)
+            {
+                stringBuilder.Append(die.Value);
+                //die.Value = 5;
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
